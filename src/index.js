@@ -9,10 +9,6 @@ app.use(express.urlencoded({extended: false}));
 const cors = require("cors");
 app.use(cors());
 
-const {morganBodyConfig} = require("./logging/morgan-config");
-const morganBody = require("morgan-body");
-morganBody(app, morganBodyConfig);
-
 app.use("/api", require("./routes"));
 
 const {handleError} = require("./errors/handle-errors-middleware");
