@@ -11,8 +11,5 @@ app.use(cors());
 
 app.use("/api", require("./routes"));
 
-const {handleError} = require("./errors/handle-errors-middleware");
-app.use(handleError);
-
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
